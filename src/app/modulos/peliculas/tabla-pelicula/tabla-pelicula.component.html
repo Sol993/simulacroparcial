@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>    
+        <th scope="col">tipo</th>
+        <th scope="col">Fecha de Estreno</th>
+        <th scope="col">Cantidad de publico</th>
+        <th scope="col">Foto de la Pelicula</th>
+        <th scope="col">Ver Detalle</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let peli of listadoPeliculas">
+        <th scope="row">{{peli.id}}</th>
+        <td>{{peli.nombre}}</td>
+        <td>{{peli.tipo}}</td>
+        <td>{{peli.fechaDeEstreno}}</td>
+        <td>{{peli.cantidadDePublico}}</td>
+        <td><img [src]="peli.fotoDeLaPelicula" width="100"[height]="100"></td>
+        <td><button type="button" (click)="onSelect(peli)">Ver Detalle</button></td>
+      </tr>
+    </tbody>
+  </table>
