@@ -5,7 +5,8 @@ import { ActoresRoutingModule } from './actores-routing.module';
 import { ActoresComponent } from './actores.component';
 import { AltaComponent } from './alta/alta.component';
 import { ListadoComponent } from './listado/listado.component';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CompartidosModule } from '../compartidos/compartidos.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,15 @@ import { ListadoComponent } from './listado/listado.component';
   ],
   imports: [
     CommonModule,
-    ActoresRoutingModule
+    ActoresRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CompartidosModule
+    
+  ],
+  exports:[
+    ListadoComponent
   ]
 })
+
 export class ActoresModule { }

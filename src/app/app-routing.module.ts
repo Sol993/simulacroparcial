@@ -8,6 +8,7 @@ const routes: Routes = [
   {path : 'busqueda', component:BusquedaComponent},
   { path: 'peliculas', loadChildren: () => import('./modulos/peliculas/peliculas.module').then(m => m.PeliculasModule) },
   { path: 'actores', loadChildren: () => import('./modulos/actores/actores.module').then(m => m.ActoresModule) },
+  { path: 'compartidos', loadChildren: () => import('./modulos/compartidos/compartidos.module').then(m => m.CompartidosModule) },
   {path:"**", component :BienvenidoComponent}
 ];
 

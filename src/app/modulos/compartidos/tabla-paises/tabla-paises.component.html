@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Selecionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let country of countryInfo'>
+        <td><img src="{{country.flags.png}}" width="40" height="20"></td>
+        <td> {{country.name}}</td>
+        <td><button class="btn btn-info btn-small" (click)="selecionarPais(this.country.name)">Selecionar Pais</button></td>
+
+      </tr>
+    </tbody>
+  </table>

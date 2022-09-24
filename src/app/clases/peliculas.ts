@@ -1,10 +1,13 @@
+import { Actor } from "./actor";
+import { TipoPelicula } from "./tipo-pelicula";
 
-export interface Peliculas {
-    id: number;
-    nombre : string;
-    tipo: string;
-    fechaDeEstreno: string;
-    cantidadDePublico: number;
-    fotoDeLaPelicula: string;
+export class Peliculas {
+    id?: number;
+    nombre?: string;
+    tipo?: TipoPelicula;
+    fechaDeEstreno?: string;
+    cantidadDePublico?: number;
+    fotoDeLaPelicula?: string;
+    Actor?: Actor;
 
 }

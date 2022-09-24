@@ -1,1 +1,23 @@
-<p>listado works!</p>
+<table class="table table-hover">
+    <thead>
+      <tr>
+
+        <th scope="col">Nombre</th>    
+        <th scope="col">Apellido</th>
+        <th scope="col">Nacionalidad</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Selecionar</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let actores of arrayActores">
+        <td>{{actores.nombre}}</td>
+        <td>{{actores.apellido}}</td>
+        <td>{{actores.nacionalidad}}</td>
+        <td>{{actores.sexo}}</td>
+        <td>{{actores.edad}}</td>
+        <td><button type="button" class="btn btn-info " (click)="selecionarActor(actores)">selecione</button></td>
+      </tr>
+    </tbody>
+  </table>

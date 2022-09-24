@@ -1,1 +1,83 @@
-<p>alta works!</p>
+<div class="row g-5">
+    <div class="col-md-5 col-lg-4 order-md-last">
+      <app-listado-actor (selecionarActorEvent)="obtenerActor($event)"></app-listado-actor>
+   </div>
+<div class="col-md-7 col-lg-8">
+    <form [formGroup]="altaForm" (ngSubmit)="guardarPelicula()">
+      <div class="row">
+        <div class="col-md-12 mb-5">
+          <h2>Angular Forms</h2>
+        </div>
+      </div>
+      <div class="row formulario">
+        <div class="col-md-6 mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre de pelicula" formControlName="nombre">
+          <small class="invalid" 
+            *ngIf="altaForm.controls.nombre.errors?.['required'] &&
+            altaForm.controls.nombre.touched">
+            El nombre es requerido
+          </small>      
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="tipo" class="form-label">Tipo</label>
+          <select class="form-select" id="tipo" placeholder="Selecione el tipo" formControlName="tipo">
+            <option *ngFor="let tipo of tipoPeliculas"
+            [value]="tipo">
+            {{tipo}}
+          </option>
+          </select>
+          <small class="invalid"
+            *ngIf="altaForm.controls.tipo.errors?.['required'] &&
+            altaForm.controls.tipo.touched">
+            El tipo de pelicula es requerido
+          </small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="fecha" class="form-label">Fecha de Estreno</label>
+          <input type="date" class="form-control" id="fecha" placeholder="Selecione fecha" formControlName="fecha">
+          <small class="invalid"
+            *ngIf="altaForm.controls.fecha.errors?.['required'] &&
+            altaForm.controls.fecha.touched">
+            La fecha es requerida
+          </small>
+          <small class="invalid"
+            *ngIf="altaForm.controls.fecha.errors?.['min'] || 
+            altaForm.controls.fecha.errors?.['max'] &&
+            altaForm.controls.fecha.touched">
+            La cantidad del publico tiene que ser de 1 a 100000 
+          </small>
+       
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cantidadDePublico" class="form-label">Cantidad de publico</label>
+          <input type="number" class="form-control" id="cantidadDePublico" formControlName="cantidadDePublico">
+          <small class="invalid"
+            *ngIf="altaForm.controls.cantidadDePublico.errors?.['required'] &&
+            altaForm.controls.cantidadDePublico.touched">
+            La cantidad de publico es requerido
+          </small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="actor" class="form-label">Actor</label>
+          <input type="text" class="form-control" readonly id="actor" formControlName="actor" >
+          <small class="invalid"
+            *ngIf="altaForm.controls.actor.errors?.['required'] &&
+            altaForm.controls.actor.touched">
+            Nacionalidad es requerido
+          </small>
+        </div>  
+      <div class="col-md-5 col-lg-4 order-md-last">      
+        <div class="col-md-12 d-grid gap-2">
+          <button type="submit" 
+          class="btn btn-primary btn-block" 
+          [disabled]="altaForm.invalid">
+          Aceptar
+        </button>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+ 
+</div>
