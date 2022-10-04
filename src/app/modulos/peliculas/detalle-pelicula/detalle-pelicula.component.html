@@ -1,7 +1,10 @@
 <div *ngIf="unaPeli">
 
     <h2>{{unaPeli.nombre | uppercase}} Detalles</h2>
-    <div><span>id: </span>{{unaPeli.id}}</div>
-    <div><span>Fecha de estreno</span>{{unaPeli.fechaDeEstreno}}</div>
+    <div><span>Actor: </span>{{unaPeli.Actor.nombre}}</div>
+    <div><span>Pais: </span> {{unaPeli.Actor.nacionalidad}}</div>
+    <div><span>Pais: </span> {{unaPeli.Actor.sexo}}</div>
+    <div><span>Pais: </span> {{unaPeli.Actor.edad}}</div>
+    <div><span>Fecha de estreno: </span>{{unaPeli.fechaDeEstreno}}</div>
 
   </div>

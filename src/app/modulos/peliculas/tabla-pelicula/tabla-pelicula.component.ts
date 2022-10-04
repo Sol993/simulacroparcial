@@ -7,7 +7,7 @@ import { Peliculas } from 'src/app/clases/peliculas';
   styleUrls: ['./tabla-pelicula.component.css']
 })
 export class TablaPeliculaComponent implements OnInit {
-  @Input() listadoPeliculas:Array<Peliculas>= new Array<Peliculas>;
+  @Input() listadoPeliculas:any;
   selectedPeli?: Peliculas;
   @Output() peliculaEvent = new EventEmitter<Peliculas>();
 

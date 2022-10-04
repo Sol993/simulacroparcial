@@ -1,5 +1,7 @@
+import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { Actor } from '../clases/actor';
 import { Peliculas } from '../clases/peliculas';
 
@@ -36,5 +38,10 @@ export class MiServicioService {
   }
   trearActores(): AngularFirestoreCollection<Actor> {
     return this.listaActor;
+  }
+
+  traerPeliculasPorActor(actorFilter:any) : AngularFirestoreCollection<Peliculas>{
+    return this._db.collection('pelicula', ref => ref.where('Actor.id','==', actorFilter ));
+        //const q= query(AngularFirestoreCollection(this._db,'pelicula'),where('actor/id','==', actorFilter ))
   }
 }

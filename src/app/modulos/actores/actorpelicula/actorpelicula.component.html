@@ -1,0 +1,20 @@
+<div>
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-warning">
+        <h4>Lista de actores</h4>
+        <div class="col-md-9 px-0" >
+            <app-listado-actor (selecionarActorEvent)="obtenerActor($event)"></app-listado-actor>
+        </div>
+      </div>
+</div>
+<div class="row align-items-md-stretch text-center" *ngIf="mostrar">
+ <div class="col-md-4 bg-light">
+    <app-listadopelicula-filtrado [idActor]="actor.id"></app-listadopelicula-filtrado>
+    </div>
+    <div class="col-md-4 border bg-light">
+      <app-informacion-pais [nacionalidad]="actor.nacionalidad"></app-informacion-pais>
+    </div>
+    <div class="col-md-4 border bg-light"><br>
+    <app-detalles-actor [actor]="actor"></app-detalles-actor>
+  </div>
+</div>
+

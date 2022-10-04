@@ -10,6 +10,8 @@ import { PaisesServicioService } from 'src/app/services/paises-servicio.service'
 export class TablaPaisesComponent implements OnInit {
 
   countryInfo : any;
+  filterTerm!: string;
+  
   @Output() selecionarPaisEvent = new EventEmitter<string>();
 
   constructor(private api:PaisesServicioService) { }

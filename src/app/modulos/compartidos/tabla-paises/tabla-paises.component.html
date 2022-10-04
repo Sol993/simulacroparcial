@@ -1,3 +1,9 @@
+<input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      [(ngModel)]="filterTerm"
+    />
 <table class="table">
     <thead>
       <tr>
@@ -7,11 +13,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let country of countryInfo'>
+      <tr *ngFor='let country of countryInfo| filter: filterTerm'>
         <td><img src="{{country.flags.png}}" width="40" height="20"></td>
         <td> {{country.name}}</td>
-        <td><button class="btn btn-info btn-small" (click)="selecionarPais(this.country.name)">Selecionar Pais</button></td>
-
-      </tr>
+        <td><button class="btn btn-info btn-small" (click)="selecionarPais(this.country.name)">Selecionar Pais</button></td>      </tr>
     </tbody>
   </table>

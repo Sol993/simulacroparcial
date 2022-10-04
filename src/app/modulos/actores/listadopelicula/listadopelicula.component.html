@@ -1,0 +1,6 @@
+<h5>Las peliculas en las que actuo fueron:</h5>
+<div *ngIf="this.peliculas">
+    <div *ngFor="let peli of this.peliculas ">
+     <li> {{peli.nombre}}</li>
+    </div>
+</div>

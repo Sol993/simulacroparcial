@@ -11,7 +11,7 @@ export class PaisesServicioService {
   public listarPaises(){
     return this._http.get("https://restcountries.com/v2/all");
   }
-  public buscarpais(pais : string)
+  public buscarpais(pais : any)
   {
     return this._http.get("https://restcountries.com/v3.1/name/"+pais);
   }

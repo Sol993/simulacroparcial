@@ -25,14 +25,13 @@ import { ActoresModule } from '../actores/actores.module';
     PeliculasRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ActoresModule
+    ActoresModule,
    
   ],
   exports: [
    TablaPeliculaComponent,
    DetallePeliculaComponent,
-   ListadoComponent
-   
+   ListadoComponent,
   ],
 
 })

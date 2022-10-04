@@ -1,0 +1,7 @@
+<button class="btn btn-info" (click)="mostrarInformacion()">Detalle de actor</button>
+<div *ngIf="this.mostrarinfo">
+    <h5>Nombre: </h5>{{actor.nombre}}
+    <h5>Pais: </h5>{{actor.nacionalidad}}
+    <h5>Edad: </h5>{{actor.edad}}
+    <h5>sexo: </h5>{{actor.sexo}}
+</div>
