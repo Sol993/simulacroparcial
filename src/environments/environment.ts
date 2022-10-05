@@ -4,7 +4,7 @@
 import { initializeApp } from "firebase/app";
 export const environment = {
   production: false,
-   firebaseConfig : {
+  firebaseConfig : {
     apiKey: "AIzaSyAxtRS_SVAht0Lq47d32FogzTKvJJFw_tA",
     authDomain: "simulacroparcial-ff130.firebaseapp.com",
     projectId: "simulacroparcial-ff130",

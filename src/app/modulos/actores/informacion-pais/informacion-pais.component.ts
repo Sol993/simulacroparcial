@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { PaisesServicioService } from 'src/app/services/paises-servicio.service';
 
 @Component({
@@ -8,16 +8,21 @@ import { PaisesServicioService } from 'src/app/services/paises-servicio.service'
 })
 export class InformacionPaisComponent implements OnInit {
 
-  @Input() nacionalidad ?= '';
+  @Input() nacionalidad : any;
   countryInfo? :any;
 
   constructor(private _servpais: PaisesServicioService) { }
 
   ngOnInit(): void {
-    console.log(this.nacionalidad);
-    this._servpais.buscarpais(this.nacionalidad).subscribe((data)=>{
-      this.countryInfo = data;
-    });
+  
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['nacionalidad']) {
+      this._servpais.buscarpais(this.nacionalidad).subscribe((data)=>{
+        this.countryInfo = data;
+      });
+    }
+	}
 
 }

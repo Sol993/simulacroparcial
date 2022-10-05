@@ -10,20 +10,16 @@ import { MiServicioService } from 'src/app/services/mi-servicio.service';
 })
 export class ActorpeliculaComponent implements OnInit {
  
-  actor: Actor=new Actor();
-  mostrar=false;
+  actor: Actor = new Actor();
+  @Input() unActor ?= Actor;
   
-  @Input() unActor?=Actor ;
-  
-
   constructor(private _db : MiServicioService) { }
 
   ngOnInit(): void {
   }
+
   obtenerActor(actor : Actor){
-    this.actor= actor; 
-    this.mostrar=true;
-   
+    this.actor = actor;    
   }
  
 

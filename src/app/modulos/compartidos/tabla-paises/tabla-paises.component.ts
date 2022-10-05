@@ -19,7 +19,6 @@ export class TablaPaisesComponent implements OnInit {
   ngOnInit(): void {
       this.api.listarPaises().subscribe((data)=>{
       this.countryInfo = data;
-      console.log(this.countryInfo);   
       
     });
    

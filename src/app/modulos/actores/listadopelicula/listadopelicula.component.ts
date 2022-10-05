@@ -1,8 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { MiServicioService } from 'src/app/services/mi-servicio.service';
 import { map } from 'rxjs/operators';
-import { Actor } from 'src/app/clases/actor';
-import { Observable } from 'rxjs';
 import { Peliculas } from 'src/app/clases/peliculas';
 
 @Component({
@@ -12,30 +10,35 @@ import { Peliculas } from 'src/app/clases/peliculas';
 })
 export class ListadopeliculaComponent implements OnInit {
 
-
-  
-  @Input() idActor ?= '';
+  @Input() idActor: any;
   peliculas?:Array<Peliculas>;
   
   constructor(private _db : MiServicioService) { }
 
   ngOnInit(): void {
-    this.mostrarPeliculasFiltradas();
+ 
     
   }
-mostrarPeliculasFiltradas()
-{
-  this.peliculas=new Array<Peliculas>;
-  this._db.traerPeliculasPorActor(this.idActor).snapshotChanges().pipe(
-    map(changes =>
-      changes.map(c =>
-        ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['idActor']) {
+      this.mostrarPeliculasFiltradas();
+    }
+	}
+  
+  mostrarPeliculasFiltradas()
+  {
+    this.peliculas=new Array<Peliculas>;
+    this._db.traerPeliculasPorActor(this.idActor).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
       )
-    )
-  ).subscribe(data => {
-    this.peliculas = data;
-    
-  });
-}
+    ).subscribe(data => {
+      this.peliculas = data;
+      
+    });
+  }
 
 }

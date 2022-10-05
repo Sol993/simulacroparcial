@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Actor } from 'src/app/clases/actor';
 
 @Component({
@@ -8,15 +8,19 @@ import { Actor } from 'src/app/clases/actor';
 })
 export class DetallesActorComponent implements OnInit {
 
-  @Input() actor:Actor=new Actor();
-  mostrarinfo=false;
+  @Input() actor : any;
   constructor() { }
 
   ngOnInit(): void {
 
   }
-  mostrarInformacion(){
-    this.mostrarinfo= true;
-  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['Actor']) {
+      
+     
+    }
+	}
+
 
 }
