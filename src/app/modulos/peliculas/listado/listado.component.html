@@ -1,2 +1,8 @@
-<app-tabla-pelicula (peliculaEvent)="mostrar($event)" [listadoPeliculas]="peliculas"></app-tabla-pelicula>
-<app-detalle-pelicula [unaPeli]="selectedPelicula" ></app-detalle-pelicula>
+<div class="container text-center row">
+    <div  class="col-9">
+        <app-tabla-pelicula (peliculaEvent)="mostrar($event)" [listadoPeliculas]="peliculas"></app-tabla-pelicula>
+    </div>
+    <div class="col-3">
+    <app-detalle-pelicula [unaPeli]="selectedPelicula" ></app-detalle-pelicula>
+    </div>
+</div>

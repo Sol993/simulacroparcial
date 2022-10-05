@@ -6,7 +6,7 @@
     <form [formGroup]="altaForm" (ngSubmit)="guardarPelicula()">
       <div class="row">
         <div class="col-md-12 mb-5">
-          <h2>Angular Forms</h2>
+          <h2>Agregar Pelicula</h2>
         </div>
       </div>
       <div class="row formulario">
@@ -64,7 +64,7 @@
           <small class="invalid"
             *ngIf="altaForm.controls.actor.errors?.['required'] &&
             altaForm.controls.actor.touched">
-            Nacionalidad es requerido
+            El actor es requerido
           </small>
         </div>  
         <div class="col-md-12 d-grid gap-2">

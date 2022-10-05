@@ -19,12 +19,14 @@ export class TablaPaisesComponent implements OnInit {
   ngOnInit(): void {
       this.api.listarPaises().subscribe((data)=>{
       this.countryInfo = data;
+      console.log(this.countryInfo);
       
     });
    
     }
    selecionarPais(pais : string){
-    this.selecionarPaisEvent.emit(pais);   
+    this.selecionarPaisEvent.emit(pais);
+    
     }
  
   

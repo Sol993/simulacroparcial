@@ -1,10 +1,10 @@
-<div *ngIf="unaPeli">
-
-    <h2>{{unaPeli.nombre | uppercase}} Detalles</h2>
-    <div><span>Actor: </span>{{unaPeli.Actor.nombre}}</div>
-    <div><span>Pais: </span> {{unaPeli.Actor.nacionalidad}}</div>
-    <div><span>Pais: </span> {{unaPeli.Actor.sexo}}</div>
-    <div><span>Pais: </span> {{unaPeli.Actor.edad}}</div>
-    <div><span>Fecha de estreno: </span>{{unaPeli.fechaDeEstreno}}</div>
-
-  </div>
+<div class="text-center border bg-light">
+    <div *ngIf="unaPeli">
+        <h2>{{unaPeli.nombre | uppercase}} Detalles</h2>
+        <div><span>Actor: </span>{{unaPeli.Actor.nombre}}</div>
+        <div><span>Nacionalidad: </span> {{unaPeli.Actor.nacionalidad}}</div>
+        <div><span>Sexo: </span> {{unaPeli.Actor.sexo}}</div>
+        <div><span>Edad: </span> {{unaPeli.Actor.edad}}</div>
+        <div><span>Fecha de estreno: </span>{{unaPeli.fechaDeEstreno}}</div>
+    </div>
+</div>

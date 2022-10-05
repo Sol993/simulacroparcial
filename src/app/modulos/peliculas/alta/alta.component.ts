@@ -47,7 +47,6 @@ export class AltaComponent implements OnInit {
   obtenerActor(actor : Actor){
     this.actor= actor;
     this.altaForm.get('actor')?.setValue(actor.nombre + ' ' +actor.apellido)
-    console.log(actor);
   }
 
 }

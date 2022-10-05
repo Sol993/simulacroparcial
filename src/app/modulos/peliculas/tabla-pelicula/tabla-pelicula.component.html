@@ -1,7 +1,6 @@
 <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Nombre</th>    
         <th scope="col">tipo</th>
         <th scope="col">Fecha de Estreno</th>
@@ -12,8 +11,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let peli of listadoPeliculas">
-        <th scope="row">{{peli.id}}</th>
-        <td>{{peli.nombre}}</td>
+        
+        <td scope="row">{{peli.nombre}}</td>
         <td>{{peli.tipo}}</td>
         <td>{{peli.fechaDeEstreno}}</td>
         <td>{{peli.cantidadDePublico}}</td>
